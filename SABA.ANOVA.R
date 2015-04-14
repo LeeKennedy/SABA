@@ -32,14 +32,11 @@ boxplot(Result~Trial,
         xlab = "Trial",
         ylab = "mg/kg",
         main = paste(n1, " (Matrix =", m1,")", sep=" "))
-dev.off()
-
 
 # Itemise trial sets to permit 'spread' function --------------------------
 Rep <- sequence(table(data3$Trial))
 data4 <- cbind(Rep, data3)
 data4 <- data4[,c(3,4,2,1,5)]
-data4$Trial <- as.factor(data4$Trial)
 data5 <- spread(data4, Trial, Result, fill="", convert = TRUE)
 data5
 
