@@ -27,14 +27,11 @@ data3 <- select(data2, Trial, Analyte, Matrix, Result, Comment) %>%
 data3$Trial <- as.factor(data3$Trial)
 
 # Boxplot of data ---------------------------------------------------------
-plot <- boxplot(Result~Trial, 
+boxplot(Result~Trial, 
         data3,
         xlab = "Trial",
         ylab = "mg/kg",
         main = paste(n1, " (Matrix =", m1,")", sep=" "))
-
-png(filename = paste0("graphs/",n1, "-", m1, ".png", sep=""),    width = 1000, height = 550, units = "px", pointsize = 12)
-plot(plot)
 dev.off()
 
 
