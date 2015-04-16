@@ -17,7 +17,7 @@ data2 <- data %>%
 
 # Set m = number of matrices -----------------------------------------------
 m <- unique(data2$Matrix)
-m1 <- m[1]
+m1 <- m[3]
 
 # Filter out suspect data and filter for matrix ----------------------------
 data3 <- select(data2, Trial, Analyte, Matrix, Result, Comment) %>%
