@@ -9,7 +9,7 @@ data <- data[,c(1:7)]
 
 # Set n to the number of analytes-------------------------------------------
 n <- na.omit(unique(data$Analyte))
-n1 <- n[1]
+n1 <- n[2]
 
 # Filter for analyte -------------------------------------------------------
 data2 <- data %>%
@@ -17,7 +17,7 @@ data2 <- data %>%
 
 # Set m = number of matrices -----------------------------------------------
 m <- unique(data2$Matrix)
-m1 <- m[1]
+m1 <- m[6]
 
 # Filter out suspect data and filter for matrix ----------------------------
 data3 <- select(data2, Trial, Analyte, Matrix, Result, Comment) %>%
